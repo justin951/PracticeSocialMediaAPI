@@ -1,0 +1,420 @@
+{
+  "showTimer": false,
+  "isDarkMode": true,
+  "disableAds": false,
+  "questionsSolved": [
+    {
+      "id": 15,
+      "skipped": false,
+      "userSolution": "select\n  city,\n  count(city) as num_patients\nfrom patients\ngroup by city\norder by num_patients desc, city asc;",
+      "hints": 1,
+      "solvedTime": 415004,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 14,
+      "skipped": false,
+      "userSolution": "select\n  patient_id,\n  diagnosis\nfrom admissions\ngroup by patient_id, diagnosis\nhaving count(*) > 1;",
+      "hints": 1,
+      "solvedTime": 225007,
+      "completedWithoutSkipping": false
+    },
+    {
+      "id": 16,
+      "skipped": false,
+      "userSolution": "select\n  first_name,\n  last_name,\n  'Patient'\nfrom patients\nunion All\nselect first_name, last_name, 'Doctor' from doctors;",
+      "hints": 1,
+      "solvedTime": 155001,
+      "completedWithoutSkipping": false
+    },
+    {
+      "id": 22,
+      "skipped": false,
+      "userSolution": "select\n  allergies,\n  count(*)\nfrom patients\nwhere allergies not null\ngroup by (allergies)\norder by count(*) desc;",
+      "hints": 1,
+      "solvedTime": 299007,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 27,
+      "skipped": false,
+      "userSolution": "select\n  first_name,\n  last_name,\n  birth_date\nfrom patients\nwhere\n  year(birth_date) between 1970 and 1979\norder by birth_date;",
+      "hints": 1,
+      "solvedTime": 124012,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 30,
+      "skipped": false,
+      "userSolution": "select * from(\n  select\n    province_id,\n    sum(height) as sum_height\n  from patients\n  group by province_id)\nwhere sum_height > 7000;",
+      "hints": 1,
+      "solvedTime": 221004,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 31,
+      "skipped": false,
+      "userSolution": "select max(weight) - min(weight) from patients where last_name = 'Maroni';",
+      "hints": 1,
+      "solvedTime": 38002,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 37,
+      "skipped": false,
+      "userSolution": "select\n  day(admission_date) as day_of_month,\n  count(*) as num_admissions\nfrom admissions\ngroup by day_of_month\norder by num_admissions desc;",
+      "hints": 2,
+      "solvedTime": 236008,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 38,
+      "skipped": false,
+      "userSolution": "select * from admissions where patient_id = 542 order by admission_date desc limit 1;",
+      "hints": 1,
+      "solvedTime": 137000,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 0,
+      "skipped": false,
+      "userSolution": "select first_name, last_name, gender \nfrom patients\nwhere gender = 'M';",
+      "hints": 1,
+      "solvedTime": 38012,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 1,
+      "skipped": false,
+      "userSolution": "select first_name, last_name\nfrom patients\nwhere allergies is null;",
+      "hints": 1,
+      "solvedTime": 131004,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 2,
+      "skipped": false,
+      "userSolution": "select first_name\nfrom patients\nwhere first_name like 'C%';",
+      "hints": 1,
+      "solvedTime": 36006,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 3,
+      "skipped": false,
+      "userSolution": "select first_name, last_name\nfrom patients\nwhere weight between 100 and 120",
+      "hints": 1,
+      "solvedTime": 53009,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 4,
+      "skipped": false,
+      "userSolution": "update patients\nset allergies = 'NKA'\nwhere allergies is null",
+      "hints": 1,
+      "solvedTime": 97004,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 5,
+      "skipped": false,
+      "userSolution": "SELECT first_name|| ' ' || last_name from patients as fullname;",
+      "hints": 1,
+      "solvedTime": 149006,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 6,
+      "skipped": false,
+      "userSolution": "select\n  pa.first_name,\n  pa.last_name,\n  pr.province_name\nfrom patients pa\nleft join province_names pr where pa.province_id = pr.province_id;",
+      "hints": 1,
+      "solvedTime": 239011,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 23,
+      "skipped": false,
+      "userSolution": "select count(*) from patients\nwhere year(birth_date) = 2010",
+      "hints": 1,
+      "solvedTime": 213010,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 33,
+      "skipped": false,
+      "userSolution": "select first_name, last_name, height \nfrom patients\norder by height desc\nlimit 1",
+      "hints": 1,
+      "solvedTime": 195006,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 34,
+      "skipped": false,
+      "userSolution": "select * from patients\nwhere patient_id \nin (1, 45, 534, 879, 1000)",
+      "hints": 1,
+      "solvedTime": 35002,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 35,
+      "skipped": false,
+      "userSolution": "select count(*) from admissions;",
+      "hints": 1,
+      "solvedTime": 11002,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 41,
+      "skipped": false,
+      "userSolution": "select * from admissions\nwhere admission_date = discharge_date",
+      "hints": 1,
+      "solvedTime": 295015,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 42,
+      "skipped": false,
+      "userSolution": "select patient_id, count(*)\nfrom admissions\nwhere patient_id = 579",
+      "hints": 1,
+      "solvedTime": 187004,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 32,
+      "skipped": false,
+      "userSolution": "select distinct city from patients where province_id = 'NS'",
+      "hints": 1,
+      "solvedTime": 85012,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 45,
+      "skipped": false,
+      "userSolution": "select first_name, last_name, birth_date\nfrom patients\nwhere weight > 70\nand height > 160",
+      "hints": 1,
+      "solvedTime": 62016,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 46,
+      "skipped": false,
+      "userSolution": "select first_name, last_name, allergies\nfrom patients\nwhere allergies not null\nand city = 'Hamilton'",
+      "hints": 1,
+      "solvedTime": 44011,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 8,
+      "skipped": false,
+      "userSolution": "select first_name from (\n  select first_name, count(*) as num_names\n  from patients\n  group by first_name\n  )\nwhere num_names = 1",
+      "hints": 1,
+      "solvedTime": 163015,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 9,
+      "skipped": false,
+      "userSolution": "select patient_id, first_name \nfrom patients \nwhere first_name like 's%____s'",
+      "hints": 1,
+      "solvedTime": 229009,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 10,
+      "skipped": false,
+      "userSolution": "create view dementia_tracker as\nselect \n\tpa.patient_id, \n    pa.first_name, \n    pa.last_name, \n    ad.diagnosis \nfrom patients pa\nleft join admissions ad on pa.patient_id = ad.patient_id;\n\nselect patient_id, first_name, last_name\nfrom dementia_tracker\nwhere diagnosis = 'Dementia';",
+      "hints": 1,
+      "solvedTime": 392010,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 11,
+      "skipped": false,
+      "userSolution": "select first_name\nfrom patients\norder by length(first_name), first_name;",
+      "hints": 1,
+      "solvedTime": 246014,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 12,
+      "skipped": false,
+      "userSolution": "select \n\t(select count(*) from patients where gender = 'M') as male_count,\n  \t(select count(*) from patients where gender = 'F') As female_count;",
+      "hints": 1,
+      "solvedTime": 306014,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 13,
+      "skipped": false,
+      "userSolution": "select\n  first_name,\n  last_name,\n  allergies\nfrom patients\nwhere allergies = 'Penicillin' or allergies = 'Morphine'\norder by allergies, first_name, last_name;",
+      "hints": 1,
+      "solvedTime": 124014,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 7,
+      "skipped": false,
+      "userSolution": "select distinct year(birth_date) as birth_year from patients order by birth_year asc",
+      "hints": 1,
+      "solvedTime": 58010,
+      "completedWithoutSkipping": true
+    },
+    {
+      "id": 28,
+      "skipped": false,
+      "userSolution": "select\n  upper(last_name) || ',' || lower(first_name)\nfrom patients\norder by first_name desc;",
+      "hints": 1,
+      "solvedTime": 113013,
+      "completedWithoutSkipping": true
+    }
+  ],
+  "autoRun": false,
+  "autocomplete": true,
+  "editorFontSize": 16,
+  "persistEditorText": false,
+  "editorText": "select first_name, last_name, gender \nfrom patients\nwhere gender = 'M';",
+  "queryTimes": [
+    {
+      "id": 0,
+      "time": 38012
+    },
+    {
+      "id": 1,
+      "time": 131004
+    },
+    {
+      "id": 2,
+      "time": 36006
+    },
+    {
+      "id": 3,
+      "time": 53009
+    },
+    {
+      "id": 4,
+      "time": 97004
+    },
+    {
+      "id": 5,
+      "time": 149006
+    },
+    {
+      "id": 6,
+      "time": 239011
+    },
+    {
+      "id": 23,
+      "time": 213010
+    },
+    {
+      "id": 33,
+      "time": 195006
+    },
+    {
+      "id": 34,
+      "time": 35002
+    },
+    {
+      "id": 35,
+      "time": 11002
+    },
+    {
+      "id": 41,
+      "time": 295015
+    },
+    {
+      "id": 42,
+      "time": 187004
+    },
+    {
+      "id": 32,
+      "time": 85012
+    },
+    {
+      "id": 45,
+      "time": 62016
+    },
+    {
+      "id": 46,
+      "time": 44011
+    },
+    {
+      "id": 7,
+      "time": 58010
+    },
+    {
+      "id": 8,
+      "time": 163015
+    },
+    {
+      "id": 9,
+      "time": 229009
+    },
+    {
+      "id": 10,
+      "time": 392010
+    },
+    {
+      "id": 11,
+      "time": 246014
+    },
+    {
+      "id": 12,
+      "time": 306014
+    },
+    {
+      "id": 13,
+      "time": 124014
+    },
+    {
+      "id": 14,
+      "time": 225007
+    },
+    {
+      "id": 15,
+      "time": 415004
+    },
+    {
+      "id": 16,
+      "time": 155001
+    },
+    {
+      "id": 22,
+      "time": 299007
+    },
+    {
+      "id": 27,
+      "time": 124012
+    },
+    {
+      "id": 28,
+      "time": 113013
+    },
+    {
+      "id": 30,
+      "time": 221004
+    },
+    {
+      "id": 31,
+      "time": 38002
+    },
+    {
+      "id": 37,
+      "time": 236008
+    },
+    {
+      "id": 38,
+      "time": 137000
+    },
+    {
+      "id": 40,
+      "time": 10921166
+    }
+  ],
+  "filterState": {
+    "selectedKeywordFilter": "ALL",
+    "selectedDifficultyFilter": "Easy",
+    "selectedCompletedFilter": "ALL",
+    "selectedDatabaseFilter": "Hospital"
+  }
+}
